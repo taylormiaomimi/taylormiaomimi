@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>张掖新房分布图</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <style type="text/css">
+    html,body{
+        margin:0;
+        width:100%;
+        height:100%;
+        background:#ffffff;
+    }
+    #map{
+        width:100%;
+        height:100%;
+    }
+    #panel {
+        position: absolute;
+        top:30px;
+        left:10px;
+        z-index: 999;
+        color: #fff;
+    }
+    #login{
+        position:absolute;
+        width:300px;
+        height:40px;
+        left:50%;
+        top:50%;
+        margin:-40px 0 0 -150px;
+    }
+    #login input[type=password]{
+        width:200px;
+        height:30px;
+        padding:3px;
+        line-height:30px;
+        border:1px solid #000;
+    }
+    #login input[type=submit]{
+        width:80px;
+        height:38px;
+        display:inline-block;
+        line-height:38px;
+    }
+  </style>
+  <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=OgOk7FKZeGgCOkN8LOys0U1dwMjfdQHf"></script>
+  <script type="text/javascript" src="/jsdemo/data/points-sample-data.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="text/javascript">
+    var map = new BMap.Map("map", {});                        // 创建Map实例
+    map.centerAndZoom(new BMap.Point(100.4771801, 38.9284344), 12);     // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+    if (document.createElement('canvas').getContext) {  // 判断当前浏览器是否支持绘制海量点
+        var points =[
+        {'lat': 38.96431173827393, 'lng': 100.4432884881833, 'quyu': '张掖蔚来城', 'huxing': '3/4/5/6', 'mianji': '125-265㎡', 'junjia': 4500}, {'lat': 38.952786796976, 'lng': 100.4601438436197, 'quyu': '金湖湾北区', 'huxing': '3', 'mianji': '113-128㎡', 'junjia': 3500}, {'lat': 38.9516447420086, 'lng': 100.4351469656852, 'quyu': '豪盛·顺祥馨苑', 'huxing': '3/4', 'mianji': '100.58-183㎡', 'junjia': 4980}, {'lat': 38.94029480365316, 'lng': 100.4592299075939, 'quyu': '爱琴海城市花园', 'huxing': '3/4', 'mianji': '104-148㎡', 'junjia': 4500}, {'lat': 38.96309047706978, 'lng': 100.4722052120411, 'quyu': '润阳佳苑', 'huxing': '2/3/4', 'mianji': '109-149㎡', 'junjia': 3890}, {'lat': 38.95965921775407, 'lng': 100.4348560045305, 'quyu': '恒大御澜庭', 'huxing': '2/3/4', 'mianji': '83.68-149.2㎡', 'junjia': 3800}, {'lat': 38.95907790282243, 'lng': 100.429286240877, 'quyu': '甘州院子', 'huxing': '别墅', 'mianji': '200-290㎡', 'junjia': 4300}, {'lat': 38.952786796976, 'lng': 100.4601438436197, 'quyu': '金湖湾', 'huxing': '3/4', 'mianji': '108-172㎡', 'junjia': 4500}, {'lat': 38.95397435733602, 'lng': 100.4327119289393, 'quyu': '恒基万禾财富广场一期', 'huxing': '1/2/3', 'mianji': '95-206㎡', 'junjia': 4274}, {'lat': 38.94470103292245, 'lng': 100.4686047137266, 'quyu': '博馨苑住宅小区', 'huxing': '3/4', 'mianji': '137.98-243.31㎡', 'junjia': 5380}, {'lat': 38.96684109047388, 'lng': 100.4381139789541, 'quyu': '滨河小镇二期', 'huxing': '2/3', 'mianji': '90.83-135.16㎡', 'junjia': 3518}, {'lat': 38.9347814717853, 'lng': 100.4845577212783, 'quyu': '天苑丽居', 'huxing': '3', 'mianji': '107-128.16㎡', 'junjia': 4100}, {'lat': 38.94413608060601, 'lng': 100.4686163018677, 'quyu': '广宇佳苑', 'huxing': '2/3/4', 'mianji': '108-145㎡', 'junjia': 3999}, {'lat': 38.98109121690763, 'lng': 100.4279340215929, 'quyu': '御墅珑湾', 'huxing': '3/6/8/别墅', 'mianji': '134.9-196.93㎡', 'junjia': 109}, {'lat': 38.93529977046668, 'lng': 100.4109892847582, 'quyu': '御隆庭苑', 'huxing': '3', 'mianji': '106.84-131.69㎡', 'junjia': 3800}, {'lat': 38.44720495280687, 'lng': 100.8123088882907, 'quyu': '书香美苑', 'huxing': '3/5', 'mianji': '126-144.78㎡', 'junjia': 3700}, {'lat': 38.78859321310897, 'lng': 101.1010040673237, 'quyu': '恒昌华府', 'huxing': '3/4', 'mianji': '107-139.4㎡', 'junjia': 3600}, {'lat': 38.93813711968935, 'lng': 100.4134143503129, 'quyu': '翰林学府嘉园', 'huxing': '1/2/3', 'mianji': '56-156.8㎡', 'junjia': 4500}, {'lat': 38.96130648440665, 'lng': 100.4316411487714, 'quyu': '金源明珠·上海滩', 'huxing': '3', 'mianji': '99.71-135.61㎡', 'junjia': 3500}, {'lat': 38.9516447420086, 'lng': 100.4351469656852, 'quyu': '顺祥嘉苑', 'huxing': '2/3/4', 'mianji': '104.58-215.01㎡', 'junjia': 3380}, {'lat': 38.95716993843936, 'lng': 100.4351716690868, 'quyu': '鼎和·新城丽景', 'huxing': '3/4', 'mianji': '107.82-155㎡', 'junjia': 4680}, {'lat': 38.9347814717853, 'lng': 100.4845577212783, 'quyu': '张掖老街', 'huxing': '2/3', 'mianji': '80-117㎡', 'junjia': 5600}, {'lat': 38.93574614837382, 'lng': 100.4084477988093, 'quyu': '愿景城', 'huxing': '商住', 'mianji': '60.41-116.47㎡', 'junjia': 4507}, {'lat': 38.93420381017892, 'lng': 100.4870409071995, 'quyu': '御景东方', 'huxing': '2/3', 'mianji': '103-154㎡', 'junjia': 3795}, {'lat': 38.92607303382508, 'lng': 100.4647336457924, 'quyu': '美联国际', 'huxing': '2/3', 'mianji': '93.06-139.07㎡', 'junjia': 3800}, {'lat': 38.96443910225856, 'lng': 100.4549689750684, 'quyu': '公园道1号', 'huxing': '2/3', 'mianji': '88.45-101.2㎡', 'junjia': 16000}, {'lat': 38.94665339124012, 'lng': 100.4118642343249, 'quyu': '锦绣南苑', 'huxing': '2/3', 'mianji': '101.84-131.38㎡', 'junjia': 3580}, {'lat': 38.94146012471563, 'lng': 100.4308519873809, 'quyu': '德和园', 'huxing': '2/3', 'mianji': '90-135.92㎡', 'junjia': 3500}, {'lat': 38.9383374277286, 'lng': 100.4302481464171, 'quyu': '顺祥明苑', 'huxing': '2/3', 'mianji': '88-126.8㎡', 'junjia': 4000}, {'lat': 38.94518719836277, 'lng': 100.424331996159, 'quyu': '世贸大厦城市综合体', 'huxing': '2/3', 'mianji': '85.35-129.85㎡', 'junjia': 3480}
+        ];
+// 添加海量点数据
+        var options = {
+            size: BMAP_POINT_SIZE_BIG,
+            shape: BMAP_POINT_SHAPE_CIRCLE,
+            color: 'red'
+        }
+        var pointCollection = new BMap.PointCollection(points, options);  // 初始化PointCollection
+        pointCollection.addEventListener('click', function (e) {
+          alert(e.point.quyu + ',户型为：' + e.point.huxing + '室,面积为：' + e.point.mianji + ',均价为' + e.point.junjia + '元/㎡');  // 监听点击事件
+        });
+        map.addOverlay(pointCollection);  // 添加Overlay
+    } else {
+        alert('请在chrome、safari、IE8+以上浏览器查看本示例');
+    }
+  </script>
+</body>
+</html>
