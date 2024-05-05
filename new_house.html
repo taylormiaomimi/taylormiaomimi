@@ -65,7 +65,7 @@
         }
         var pointCollection = new BMap.PointCollection(points, options);  // 初始化PointCollection
         pointCollection.addEventListener('click', function (e) {
-          alert(e.point.quyu + ',户型为：' + e.point.huxing + '室,面积为：' + e.point.mianji + ',均价为' + e.point.junjia + '元/㎡');  // 监听点击事件
+          alert(e.point.quyu + ',户型为：' + e.point.huxing + '室,面积为：' + e.point.mianji + ',均价为：' + e.point.junjia + '元/㎡');  // 监听点击事件
         });
         map.addOverlay(pointCollection);  // 添加Overlay
     } else {
